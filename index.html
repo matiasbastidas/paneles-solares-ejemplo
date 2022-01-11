@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Paneles Solares</title>
+</head>
+<body>
+    <h1>Ejemplo Cálculo</h1>
+    <hr>
+    <div class="container">
+        <!--TV-->
+        <div class="div1"><img src="./img/electro/tv.png" title="Televisión" alt="TV"></div>
+        <div class="div2">
+            <select id="selectPulgadas" onchange="functTV(); sumaTotal()">
+                <option value="0">Pulgadas</option>
+                <option value="100">32"-40"</option>
+                <option value="155">42"-55"</option>
+                <option value="200">65"-85"</option>
+            </select>
+        </div>
+        <div class="div3">
+            <select id="selectTVCantidad" onchange="functTV(); sumaTotal()">
+                <option value="0">Cantidad</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div4">
+            <select id="selectTVHoras" onchange="functTV(); sumaTotal()">
+                <option value="0">Horas</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+            </select>
+        </div>
+        <div class="div5">=</div>
+        <div class="div6"><p id="resultadoTV"></p> </div>
+        <hr>
+        <!--Hervidor-->
+        <div class="div7"><img src="./img/electro/hervidor.png" title="Hervidor" alt="Hervidor"> </div>
+        <div class="div8">*</div>
+        <div class="div9">
+            <select id="selectHervidorCantidad" onchange="functHervidor(); sumaTotal()">
+                <option value="0">Cantidad</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div10">
+            <select id="selectHervidorHoras" onchange="functHervidor(); sumaTotal()">
+                <option value="0">Horas</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div11">=</div>
+        <div class="div12"><p id="resultadohervidor"></p></div>
+        <hr>
+        <!--Microondas-->
+        <div class="div13"><img src="./img/electro/microondas.png" title="Microondas" alt="Microondas"></div>
+        <div class="div14">*</div>
+        <div class="div15">
+            <select id="selectMicroondasCantidad" onchange="functMicro(); sumaTotal()">
+                <option value="0">Cantidad</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div16">
+            <select id="selectMicroondasHoras" onchange="functMicro(); sumaTotal()">
+                <option value="0">Horas</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div17">=</div>
+        <div class="div18"><p id="resultadomicroondas"></p></div>
+        <hr>
+        <!--Lavadora-->
+        <div class="div19"><img src="./img/electro/lavadora.png" title="Lavadora" alt="Lavadora"></div>
+        <div class="div20">*</div>
+        <div class="div21">
+            <select id="selectLavadoraCantidad" onchange="functLava(); sumaTotal()">
+                <option value="0">Cantidad</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div22">
+            <select id="selectLavadoraHoras" onchange="functLava(); sumaTotal()">
+                <option value="0">Horas</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div23">=</div>
+        <div class="div24"><p id="resultadolavadora"></p></div>
+        <hr>
+        <!--Secadora-->
+        <div class="div25"><img src="./img/electro/secadora.png" title="Secadora" alt="Secadora"></div>
+        <div class="div26">*</div>
+        <div class="div27">
+            <select id="selectSecadoraCantidad" onchange="functSeca(); sumaTotal()">
+                <option value="0">Cantidad</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div28">
+            <select id="selectSecadoraHoras" onchange="functSeca(); sumaTotal()">
+                <option value="0">Horas</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div29">=</div>
+        <div class="div30"><p id="resultadosecadora"></p></div>
+        <hr>
+        <!--Aspiradora-->
+        <div class="div31"><img src="./img/electro/aspiradora.png" title="Aspiradora" alt="Aspiradora"></div>
+        <div class="div32">*</div>
+        <div class="div33">
+            <select id="selectAspiradoraCantidad" onchange="functAspi(); sumaTotal()">
+                <option value="0">Cantidad</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div34">
+            <select id="selectAspiradoraHoras" onchange="functAspi(); sumaTotal()">
+                <option value="0">Horas</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div35">=</div>
+        <div class="div36"><p id="resultadoaspiradora"></p></div>
+        <hr>
+        <!--Regrigerador-->
+        <div class="div37"><img src="./img/electro/refrigerador.png" title="Refrigerador" alt="Refrigerador"></div>
+        <div class="div38">*</div>
+        <div class="div39">
+            <select id="selectRefrigeradorCantidad" onchange="functRefri(); sumaTotal()">
+                <option value="0">Cantidad</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div40">*</div>
+        <div class="div41">=</div>
+        <div class="div42"><p id="resultadorefrigerador"></p></div>
+        <hr>
+        <!--Congelador-->
+        <div class="div43"><img src="./img/electro/congelador.png" title="Congelador" alt="Congelador"></div>
+        <div class="div44">*</div>
+        <div class="div45">
+            <select id="selectCongeladorCantidad" onchange="functConge(); sumaTotal()">
+                <option value="0">Cantidad</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+            </select>
+        </div>
+        <div class="div46">*</div>
+        <div class="div47">=</div>
+        <div class="div48"><p id="resultadocongelador"></p></div>
+        <hr>
+        <!--Ampolletas-->
+        <div class="div49"><img src="./img/electro/led.png" title="Ampolleta" alt="Ampolleta"></div>
+        <div class="div50">*</div>
+        <div class="div51">
+            <select id="selectAmpolletasCantidad" onchange="functAmpolletas(); sumaTotal()">
+                <option value="0">Cantidad</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+            </select>
+        </div>
+        <div class="div52">
+            <select id="selectAmpolletasHoras">
+                <option value="0">Horas</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+            </select>
+        </div>
+        <div class="div53">=</div>
+        <div class="div54"><p id="resultadoampolletas"></p></div>
+        </div>
+    <br>
+    <h2>Resultado total:</h2><p id="resultadototal"></p>
+    <h2>Potencia Inversor</h2><p id="resultadoinversor"></p>
+    <br>
+<script src="./main.js"></script>
+</body>
+</html>
