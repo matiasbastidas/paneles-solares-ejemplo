@@ -59,7 +59,7 @@ function functAspi() {
     const gastoaspiradora = 1750;
     let sumaaspiradora = aspiradoracantidad * aspiradorahoras * gastoaspiradora;
     document.getElementById("resultadoaspiradora").innerHTML = sumaaspiradora + " Watts";
-    sumas.aspirador = sumaaspiradora;
+    sumas.aspiradora = sumaaspiradora;
 }
 
 //Refrigerador
@@ -92,8 +92,36 @@ function functAmpolletas() {
 
 //Suma total de Watts
 function sumaTotal() {
+    // "|| 0" es para evitar NaN
     let resultadotv = sumas.tv || 0;
-    let resultadohervidor = sumas.hervidor;
-    let sumatotalwatts= resultadohervidor + resultadotv || 0;
+    let resultadohervidor = sumas.hervidor || 0;
+    let resultadomicroondas = sumas.microondas || 0;
+    let resultadolavadora = sumas.lavadora || 0;
+    let resultadosecadora = sumas.secadora || 0;
+    let resultadoaspiradora = sumas.aspiradora || 0;
+    let resultadorefrigerador = sumas.refrigerador || 0;
+    let resultadocongelador = sumas.congelador || 0;
+    let resultadoampolletas = sumas.ampolletas || 0;
+    let sumatotalwatts= resultadotv + resultadohervidor + resultadomicroondas + resultadolavadora + resultadolavadora + resultadosecadora + resultadoaspiradora + resultadorefrigerador + resultadocongelador + resultadoampolletas;
     document.getElementById("resultadototal").innerHTML = sumatotalwatts + " Watts";
+    sumas.sumatotalwatts = sumatotalwatts;
+}
+
+// Función para calculo  
+function sumaPotenciaInversor() {
+    let resultadototalwatts = sumas.sumatotalwatts || 0;
+    const consumomediodiariocargacontinua = 10;
+    //Suma total + 20% de margen
+    let consumomediodiariocargaalterna = resultadototalwatts * 1.2;
+    const rendimientoinversor = 0.9; 
+    const rendimientobateria = 0.95;
+    const rendimientoconductores = 1;
+    let consumomediodiario = ((consumomediodiariocargacontinua+(consumomediodiariocargaalterna/rendimientoinversor))/(rendimientobateria*rendimientoconductores));
+    //Consumo de energía medio en Ah/día
+    const voltajebateria = 24;
+    let consumomediodiarioampere = (consumomediodiario/voltajebateria);
+
+    
+
+
 }
